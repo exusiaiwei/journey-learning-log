@@ -1,0 +1,29 @@
+{
+    "DEFAULT_TIEBA": "仙五前修改",
+    "MYSQL_PASSWD": "",
+    "MYSQL_DBNAME": {
+        "孙笑川": "sxc",
+        "俄乌战争": "eewuwar",
+        "中国人口": "cnpeople",
+        "航空母舰": "cv",
+        "抗压背锅": "kangya",
+        "原神": "genshin",
+        "chatgpt": "chatgpt",
+        "人工智能": "ai",
+        "彩礼": "caili",
+        "道诡异仙": "daogui",
+        "东野圭吾": "dygw",
+        "考研": "kaoyan",
+        "流浪地球": "qiu",
+        "满江红": "mjh",
+        "明日方舟": "arknights",
+        "三体": "threebody",
+        "星际争霸2": "sc2",
+        "少女前线": "shaoqian",
+        "崩坏星穹铁道": "xingtie",
+        "易烊千玺": "yyqx"
+    },
+    "MYSQL_USER": "root",
+    "MYSQL_HOST": "localhost",
+    "MYSQL_PORT": 3306
+}
