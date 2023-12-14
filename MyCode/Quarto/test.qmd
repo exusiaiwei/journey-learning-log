@@ -1,9 +1,13 @@
 ---
 title: "Quarto 示例文档"
-author: "您的姓名"
-date: "2023-09-26"
-output:
-  html_document: default
+author: "Zichao Wei"
+date: "2023-11-25"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    theme: Simplex
+    code-fold: true
 ---
 
 # 一级标题
