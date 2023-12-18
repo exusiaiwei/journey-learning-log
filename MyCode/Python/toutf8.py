@@ -2,7 +2,7 @@ import os
 import chardet as chardet
 
 # 指定文件路径
-path = r'C:\Users\魏子超\OneDrive\Python\MyPythonProject1\语料txt'
+path = r'语料txt'
 
 # 对路径内的每一个文件进行转换
 for file in os.listdir(path):

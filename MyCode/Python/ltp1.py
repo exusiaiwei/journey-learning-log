@@ -1,4 +1,4 @@
-# 使用ltp模块的pipeline函数，实现从一个文件夹(C:\Users\魏子超\OneDrive\学习\毕业论文\语料output)中，读取所有txt文件，逐一进行分析，最后将结果分析保存在对应txt文件名-dp.txt中
+# 使用ltp模块的pipeline函数，实现从一个文件夹()中，读取所有txt文件，逐一进行分析，最后将结果分析保存在对应txt文件名-dp.txt中
 
 from ltp import LTP
 

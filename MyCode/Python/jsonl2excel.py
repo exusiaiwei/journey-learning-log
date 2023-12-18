@@ -8,7 +8,7 @@ import os
 import pandas as pd
 
 # 获取文件夹内文件路径
-in_dir = r'/MyPythonProject1/WeiboSpider-master/output'
+in_dir = r'WeiboSpider-master/output'
 file_list = os.listdir(in_dir)
 
 # 循环把文件转换为xlsx文件
