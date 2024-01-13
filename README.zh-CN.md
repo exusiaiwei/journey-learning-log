@@ -1,8 +1,12 @@
 # 我的学习代码仓库
 
-[![standard-readme 符合规范](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
 [English Version](https://github.com/exusiaiwei/My-Coding-Journey/blob/main/readme.md)
+
+![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+
+![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
 
 一个用于组织和展示我的编程项目和学习历程的仓库。
 

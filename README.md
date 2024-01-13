@@ -1,8 +1,13 @@
 # My Learning Code Repository
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 [中文版](https://github.com/exusiaiwei/My-Coding-Journey/blob/main/README.zh-CN.md)
+
+![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+
+![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
 
 A repository to organize and showcase my coding projects and learning journey.
 
