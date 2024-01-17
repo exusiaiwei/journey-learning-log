@@ -1,0 +1,36 @@
+# Variable
+
+Variable是Python中的一个概念，用于存储和操作数据。它可以存储各种类型的数据，例如整数、浮点数、字符串等。
+
+特性：
+- 可以通过赋值操作将数据存储到Variable中。
+- 可以使用变量名来访问Variable中存储的数据。
+- 变量的值可以随时修改。
+- 变量可以在程序的不同位置使用和传递。
+- 变量的作用域可以限定在特定的代码块中。
+
+
+# Variable
+
+Variable is a concept in Python used to store and manipulate data. It can store various types of data, such as integers, floats, strings, etc.
+
+Features:
+- Data can be stored in a Variable using the assignment operator.
+- The data stored in a Variable can be accessed using its variable name.
+- The value of a Variable can be modified at any time.
+- Variables can be used and passed around in different parts of a program.
+- The scope of a Variable can be limited to a specific code block.
+
+```{python}
+i = 5
+print(i)
+
+e = ( i + 1 ) * 2
+
+print(e)
+
+s = '''This is a multi-line string.
+This is the second line.'''
+
+print(s)
+```

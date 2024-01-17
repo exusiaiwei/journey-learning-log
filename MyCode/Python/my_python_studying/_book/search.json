@@ -1,0 +1,53 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Python Studying",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "data_type.html",
+    "href": "data_type.html",
+    "title": "1  数据类型",
+    "section": "",
+    "text": "2 字面常量\n字面常量是在代码中直接写入且在程序执行过程中不会改变的固定值。 在Python中，有几种类型的字面常量，包括： - 数值字面常量：整数、浮点数和复数。 - 字符串字面常量：用单引号（’’）或双引号（““）括起来的字符序列。 - 布尔字面常量：True和False。 - None：表示缺少值的特殊常量。\n字面常量用于给变量赋值、进行计算和定义Python程序中的条件。 它们提供了一种直接在代码中表示固定值的方式，使程序更易于理解和维护。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>数据类型</span>"
+    ]
+  },
+  {
+    "objectID": "data_type.html#示例用法",
+    "href": "data_type.html#示例用法",
+    "title": "1  数据类型",
+    "section": "2.1 示例用法：",
+    "text": "2.1 示例用法：\n{python} x = 10  # 将整数字面常量赋值给变量 y = 3.14  # 将浮点数字面常量赋值给变量 name = \"John\"  # 将字符串字面常量赋值给变量 is_active = True  # 将布尔字面常量赋值给变量 empty_value = None  # 将None字面常量赋值给变量\nLiteral constants are fixed values that are directly written in the code and do not change during program execution. In Python, there are several types of literal constants, including: - Numeric literals: integers, floating-point numbers, and complex numbers. - String literals: sequences of characters enclosed in single quotes (’’) or double quotes (““). - Boolean literals: True and False. - None: a special constant representing the absence of a value.\nLiteral constants are used to assign values to variables, perform calculations, and define conditions in Python programs. They provide a way to represent fixed values directly in the code, making it easier to understand and maintain the program.\n# Variable\nVariable是Python中的一个概念，用于存储和操作数据。它可以存储各种类型的数据，例如整数、浮点数、字符串等。\n特性： - 可以通过赋值操作将数据存储到Variable中。 - 可以使用变量名来访问Variable中存储的数据。 - 变量的值可以随时修改。 - 变量可以在程序的不同位置使用和传递。 - 变量的作用域可以限定在特定的代码块中。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>数据类型</span>"
+    ]
+  }
+]
