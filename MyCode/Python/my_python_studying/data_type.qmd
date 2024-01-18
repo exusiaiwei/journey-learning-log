@@ -13,13 +13,13 @@
  它们提供了一种直接在代码中表示固定值的方式，使程序更易于理解和维护。
 
 ## 示例用法：
-``{python}
+```{python}
 x = 10  # 将整数字面常量赋值给变量
 y = 3.14  # 将浮点数字面常量赋值给变量
 name = "John"  # 将字符串字面常量赋值给变量
 is_active = True  # 将布尔字面常量赋值给变量
 empty_value = None  # 将None字面常量赋值给变量
-``
+```
 
 Literal constants are fixed values that are directly written in the code and do not change during program execution.
  In Python, there are several types of literal constants, including:
@@ -54,7 +54,7 @@ Features:
 - Variables can be used and passed around in different parts of a program.
 - The scope of a Variable can be limited to a specific code block.
 
-``{python}
+```{python}
 i = 5
 print(i)
 
@@ -66,4 +66,4 @@ s = '''This is a multi-line string.
 This is the second line.'''
 
 print(s)
-``
+```
