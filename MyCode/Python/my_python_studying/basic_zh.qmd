@@ -100,7 +100,6 @@ print(greeting3)  # 输出：Hello, my name is Alice and I am 25 years old.
 - \\：反斜杠
 
 ```{python}
-
 # 在字符串中使用转义序列来表示特殊字符：
 print("Hello\tWorld")  # 输出：Hello    World
 print("I\'m a programmer")  # 输出：I'm a programmer
