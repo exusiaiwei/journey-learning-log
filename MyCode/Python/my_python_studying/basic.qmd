@@ -1,16 +1,20 @@
+# Basic
 
-# Data Types
+## Data Types
 
-## Literal Constants
+### Literal Constants
 
 Literal constants are fixed values that are directly written in the code and do not change during program execution.
+
 In Python, there are several types of literal constants, including:
+
 - Numeric literals: integers, floating-point numbers, and complex numbers.
 - String literals: sequences of characters enclosed in single quotes ('') or double quotes ("").
 - Boolean literals: True and False.
 - None: a special constant that represents the absence of a value.
 
 Literal constants are used to assign values to variables, perform calculations, and define conditions in Python programs.
+
 They provide a way to represent fixed values directly in the code, making the program more understandable and maintainable.
 
 ```{python}
@@ -23,9 +27,11 @@ empty_value = None  # Assign a None literal to the variable
 ```
 
 ### String
+
 The string is a data type used to represent text data.
 
 Features:
+
 - In Python, you can specify a string with single or double quotes.
 - Triple quotes can be used to specify a multi-line string.
 - The value of a string cannot be modified.
@@ -86,12 +92,14 @@ Escape sequences are a special sequence of characters that start with a backslas
 Escape sequences start with a backslash (`\`) and are followed by one or more characters to represent a specific character or operation. By using escape sequences, we can insert these special characters into strings, rather than interpreting them as ordinary characters.
 
 Definition and Characteristics of Escape Sequences:
+
 - Escape sequences start with a backslash (`\`).
 - Escape sequences are formed by one or more characters.
 - Escape sequences are used to represent non-printing characters, special characters, or characters with special meanings.
 - Escape sequences can be used in strings, character constants, regular expressions, and other contexts.
 
 Here are some common escape sequences and what they represent:
+
 - `\n`: newline
 - `\t`: tab
 - `\r`: carriage return
@@ -120,6 +128,7 @@ print(result)  # Output: ['12345']
 A variable is a concept in Python that is used to store and manipulate data. It can store various types of data, such as integers, floating-point numbers, strings, etc.
 
 Features:
+
 - You can store data in a variable via an assignment operation.
 - You can use the variable name to access the data stored in the variable.
 - The value of a variable can be modified at any time.
@@ -141,20 +150,22 @@ This is the second line.'''
 print(s)
 ```
 
-# Execution Logic
+## Execution Logic
 
-## Logical Lines and Physical Lines
+### Logical Lines and Physical Lines
 
 A logical line refers to a line in the code that represents a statement or command, while a physical line refers to the text that actually occupies a line in the code file.
 
 A logical line can span multiple physical lines by connecting multiple physical lines into one logical line using line connectors (`\`). A physical line is the actual number of lines in the code file, with each physical line ending with a newline character (`\n`).
 
 Features of Logical Lines:
+
 - A logical line can contain one or more statements or commands.
 - Logical lines can span multiple physical lines.
 - A logical line ends with a newline character (`\n`).
 
 Features of Physical Lines:
+
 - Physical lines are the actual number of lines in the code file.
 - Each physical line ends with a newline character (`\n`).
 
@@ -182,16 +193,18 @@ y = 5; print(y)
 
 ```
 
-## Indentation
+### Indentation
 
 Indentation is a syntax rule in Python used to represent the hierarchical structure of the code blocks. In Python, the indentation is mandatory and it determines the execution order and logical relations of the code. The level of indentation of the logical lines determines the grouping of the statements. Statements in the same group form a block of code.
 
 Basic Concepts:
+
 - Indentation is achieved through the use of spaces or tabs.
 - The amount and style of indentation must remain consistent, typically four spaces are recommended for indentation.
 - The hierarchal structure of the indentation determines the nesting relation of the code blocks.
 
 Features:
+
 - Indentation is used to define code blocks for functions, loops, conditional statements, and more.
 - Indentation can enhance the readability and maintainability of the code.
 - Indentation errors can lead to syntax errors or logical errors.

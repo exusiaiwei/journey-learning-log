@@ -21,26 +21,35 @@ The flexibility of control flow allows programs to perform different operations 
 Conditional statements allow different code blocks to be executed based on the truth or falsehood of a condition. The `if` statement is used to execute a code block when a condition is true, while the `else` statement is used to execute a code block when a condition is false.
 
 ```{python}
-# Example code from A Byte of Python
+# The sample code comes from A Byte of Python
+# Here we define the guess value directly, instead of obtaining it through input
+# This is because environments like Quarto and Jupyter Notebook can't handle intermediate input (input function)
+# Such environments are designed to execute code in bulk. Once all cells start executing, they can complete all runs without human intervention
+# Therefore, we directly set a value here, instead of obtaining it through input
+guess = 20  
+
 number = 23
-guess = int(input('Please enter an integer:'))
+
+print('Your guess is:', guess)
 
 if guess == number:
-    # New code block starts here
-    print('Congratulations, you guessed it.')
-    print('(But you did not win any prizes!)')
-    # New code block ends here
+    print('Congratulations, you guessed it right.')
+    print('(But you did not win any prize!)')
 elif guess < number:
     # Another code block
-    print('No, it is a little higher than that')
-    # You can do whatever you want in a code block...
+    print('No, it is a little bit larger than that.')
+    # You can do anything you want to do in the code block...
 else:
-    print('No, it is a little lower than that')
-    # You must guess higher than number to reach here
+    print('No, it is a little bit smaller than that.')
+    # You will only get here if your guess is greater than number
 
 print('Done')
-# This final statement will always be executed
-# after the if statement is executed.
+# This last statement will always be executed,
+# after if statement.
+
+# If you want to obtain user input in other environments (such as standard Python environment or IDLE),
+# You can change the fifth line of code to "guess = int(input('Enter an integer:'))".
+# This way, you can receive user input as the value of 'guess', and then perform subsequent judgement.
 ```
 
 The knowledge points in the example code:
@@ -58,26 +67,36 @@ The knowledge points in the example code:
 The `while` statement allows a set of statements to be repeatedly executed as long as a condition is true. The `while` statement is a type of loop statement and can include an optional `if` statement.
 
 ```{python}
-# Example code from A Byte of Python
+# The sample code comes from A Byte of Python
 number = 23
 running = True
 
+# As we can't use input() function in Quarto or Jupyter Notebook, we set up a preset guess list here
+guesses = [20, 25, 23]  
+guesses_iter = iter(guesses)  # Create an iterator 
+
 while running:
-    guess = int(input('Please enter an integer: '))
+    # In Quarto and Jupyter Notebook, 'input()' function needs to be rewritten as iterating guess value from preset list
+    guess = next(guesses_iter)
+    print('Your guess is:', guess)
 
     if guess == number:
-        print('Congratulations, you guessed it.')
-        # This will cause the while loop to break
+        # If the guess value equals to set value, it will print that you guess right and end the while loop
+        print('Congratulations! You guess it right.')
         running = False
     elif guess < number:
-        print('No, it is a little higher than that')
+        # It will also show that the preset guess value is too low
+        print('No, it is a little higher than that.')
     else:
-        print('No, it is a little lower than that')
-else:
-    print('The while loop is over.')
-    # You can do whatever you want in a code block...
+        # It will also show that the preset guess value is too high
+        print('No, it is a little lower than that.')
 
 print('Done')
+
+# When the iterator 'guesses_iter' traverse all guesses, the program will end
+# If you are running it in a real Python environment or IDLE, you can comment out the line 'guess = next(guesses_iter)'
+# and uncomment the line 'guess = int(input('Enter an integer : '))', and also comment out 'guesses' and 'guesses_iter'
+# Then it can achieve the continuous guessing of the user through the user input and continuous while loop
 ```
 
 The knowledge points in the example code:
@@ -104,6 +123,7 @@ else:
 ```
 
 The knowledge points in the example code are as follows:
+
 - The built-in function `range` can generate a sequence of numbers.
 - By default, the step size of `range` is 1. The third number provided to `range` will be the step size, for example, `range(1,5,2)` gives `[1,3]`. The second number (i.e., the end number) is not included.
 - `range` generates only one number at a time. If you need the complete list of numbers, you need to call `list()`.
@@ -117,16 +137,34 @@ The `break` statement is called a jump statement, which can stop the execution o
 If a `for` or `while` loop is exited using `break`, the corresponding `else` block of the loop will not be executed.
 
 ```{python}
-# Example code from A Byte of Python
+# The sample code comes from A Byte of Python
+# Set up a preset input list
+inputs = ['Hello', 'abcdef', '12345', 'quit']
+
+# Create an iterator
+inputs_iter = iter(inputs)
+
 while True:
-    s = input('Enter something : ')
+    # Get the input from the preset input list
+    s = next(inputs_iter)
+
+    print('The input string is: ', s)
     if s == 'quit':
         break
-    print('Length of the string is', len(s))
+    print('The length of the string is', len(s))
 print('Done')
+
+# Here we use a preset input list and iterator to simulate user input
+# In each loop, we get an input from the list and check whether the input is 'quit'. If yes, we break the loop.
+# Otherwise, we print out the length of the input
+# This way, we can run the code in an environment like Quarto or Jupyter Notebook that does not support input()
+# If you want to run it in a real Python environment or IDLE,
+# you can comment out the line 's = next(inputs_iter)', uncomment the line 's = input('Enter something: ')',
+# also comment out 'inputs' and 'inputs_iter', and it will be back to its original state.
 ```
 
 The knowledge points in the example code are as follows:
+
 - The built-in function `len` can measure the length of an input string.
 - The `break` statement can also be used with a `for` loop.
 
@@ -135,16 +173,31 @@ The knowledge points in the example code are as follows:
 The `continue` statement is used to skip the remaining statements in the current loop block and continue with the next iteration of the loop.
 
 ```{python}
-# Example code from A Byte of Python
+# The sample code comes from A Byte of Python
+# Set up a preset input list
+inputs = ['Hello', 'abcdef', '12', '1234', 'quit']
+
+# Create an iterator
+inputs_iter = iter(inputs)
 
 while True:
-    s = input('Enter something : ')
+    # Get input from the preset input list
+    # s = input('Enter something : ')
+    s = next(inputs_iter)
+
+    print('The input string is: ', s)
     if s == 'quit':
         break
     if len(s) < 3:
-        print('Too small')
+        print('Too short')
         continue
-    print('Input is of sufficient length')
-    # Do other kinds of processing here...
+    print('Input length is sufficient')
+    # You can do anything you want to do in the code block...
 print('Done')
+
+# This code can run smoothly in both Quarto and Jupyter environments. In each loop, 
+# it will get an input from the preset string list and then perform different operations based on the length of this input:
+# 1. If the input is 'quit', then it will end the entire loop;
+# 2. If the length of the input is less than 3, then it will print 'Too short', and skip the rest of the current loop, and directly start the next loop;
+# 3. If the length of the input is not less than 3, then it will print 'Input length is sufficient'.
 ```
