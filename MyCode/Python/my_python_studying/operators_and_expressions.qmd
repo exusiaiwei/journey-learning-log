@@ -28,7 +28,7 @@ x2 = "a" + "b"
 print(x2)
 # Subtraction Operator
 y1 = 3 - 2
-print(y)
+print(y1)
 y2 = - 2
 print(y2)
 # Multiplication Operator
