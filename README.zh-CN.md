@@ -40,6 +40,10 @@
 
 ![standard-readme 符合规范](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
 
+![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+
+![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
+
 ## 相关仓库
 
 - [undergraduate-graduation-project-attachment](https://github.com/exusiaiwei/undergraduate-graduation-project-attachment)：此项目包含了我的本科毕业论文的配套材料，其中主要包括语料库及其处理、数据分析的相关代码。

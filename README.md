@@ -42,6 +42,10 @@ As this is simply a showcase and record repository for code learning purposes, t
 
 ![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
 
+![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+
+![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
+
 ## Related Repositories
 
 - [undergraduate-graduation-project-attachment](https://github.com/exusiaiwei/undergraduate-graduation-project-attachment): This project contains the supporting materials for my undergraduate graduation thesis, including the corpus and its processing, as well as the relevant code for data analysis.
