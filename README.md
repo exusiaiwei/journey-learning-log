@@ -1,4 +1,4 @@
-# My Learning Code Repository
+# My Coding Journey
 
 
 [中文版](https://github.com/exusiaiwei/My-Coding-Journey/blob/main/README.zh-CN.md)
@@ -13,7 +13,7 @@ A repository to organize and showcase my coding projects and learning journey.
 
 ## Table of Contents
 
-- [My Learning Code Repository](#my-learning-code-repository)
+- [My Coding Journey](#my-coding-journey)
   - [Table of Contents](#table-of-contents)
   - [Background](#background)
   - [Installation](#installation)
