@@ -50,7 +50,7 @@
 
 - [EyeTracking-Experiment-WZC](https://github.com/exusiaiwei/EyeTracking-Experiment-WZC)：此项目储存了我使用Eyelink眼动追踪设备进行实验的程序和数据。
 
-- [My-Python-Learning](https://github.com/exusiaiwei/My-Python-Learning)：这是我个人学习Python的笔记和实践记录，主要包含了我在Python学习路径上的探索和心得。
+- [My-Python-Studying](https://github.com/exusiaiwei/My-Python-Studying)：这是我个人学习Python的笔记和实践记录，主要包含了我在Python学习路径上的探索和心得。
 
 - [WHU-Recommendation-Letter-Template](https://github.com/exusiaiwei/WHU-Recommendation-Letter-Template)：这个项目提供了一份我为武汉大学创建的Latex推荐信模板。
 

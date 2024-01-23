@@ -52,7 +52,7 @@ As this is simply a showcase and record repository for code learning purposes, t
 
 - [EyeTracking-Experiment-WZC](https://github.com/exusiaiwei/EyeTracking-Experiment-WZC): This project stores the programs and data for the experiments I conducted using the Eyelink eye-tracking device.
 
-- [My-Python-Learning](https://github.com/exusiaiwei/My-Python-Learning): This is my personal notes and practice records for learning Python, mainly documenting my exploration and insights on the Python learning path.
+- [My-Python-Studying](https://github.com/exusiaiwei/My-Python-Studying): This is my personal notes and practice records for learning Python, mainly documenting my exploration and insights on the Python learning path.
 
 - [WHU-Recommendation-Letter-Template](https://github.com/exusiaiwei/WHU-Recommendation-Letter-Template): This project provides a LaTeX recommendation letter template that I created for Wuhan University.
 
