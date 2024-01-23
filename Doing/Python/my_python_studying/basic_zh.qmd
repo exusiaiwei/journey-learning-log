@@ -1,0 +1,221 @@
+# 基础
+
+## 数据类型
+
+### 字面常量
+
+字面常量是在代码中直接写入且在程序执行过程中不会改变的固定值。
+
+在Python中，有几种类型的字面常量，包括：
+
+- 数值字面常量：整数、浮点数和复数。
+- 字符串字面常量：用单引号（''）或双引号（""）括起来的字符序列。
+- 布尔字面常量：True和False。
+- None：表示缺少值的特殊常量。
+
+ 字面常量用于给变量赋值、进行计算和定义Python程序中的条件。
+
+ 它们提供了一种直接在代码中表示固定值的方式，使程序更易于理解和维护。
+
+```{python}
+x = 10  # 将整数字面常量赋值给变量
+y = 3.14  # 将浮点数字面常量赋值给变量
+name = 'John'  # 使用单引号括起来的字符串
+message = "Hello, world!"  # 使用双引号括起来的字符串
+is_active = True  # 将布尔字面常量赋值给变量
+empty_value = None  # 将None字面常量赋值给变量
+```
+
+### 字符串
+
+字符串是用于表示文本数据的数据类型。
+
+特性：
+
+- 在python中，可以用单引号和双引号指定字符串。
+- 三引号可以指定多行字符串。
+- 字符串的值不可以修改。
+
+```{python}
+# 创建字符串
+name = "Alice"
+
+# 连接字符串
+greeting = "Hello, " + name + "!"
+
+# 输出字符串
+print(greeting)  # 输出：Hello, Alice!
+
+# 获取字符串长度
+length = len(name)
+print(length)  # 输出：5
+
+# 截取字符串
+substring = name[1:3]
+print(substring)  # 输出：li
+
+# 替换字符串
+new_name = name.replace("A", "B")
+print(new_name)  # 输出：Blice
+```
+
+#### 字符串的格式化函数
+
+字符串的format函数可以将相应参数传入字符串中。
+
+- 占位符为{}
+- 可以通过索引指定插入顺序，python从0开始计数。
+- 可以命名参数。
+
+```{python}
+name = "Alice"
+age = 25
+
+# 使用占位符插入变量
+greeting = "Hello, my name is {} and I am {} years old.".format(name, age)
+print(greeting)  # 输出：Hello, my name is Alice and I am 25 years old.
+
+# 可以通过索引指定插入的顺序
+greeting2 = "Hello, my name is {1} and I am {0} years old.".format(age, name)
+print(greeting2)  # 输出：Hello, my name is Alice and I am 25 years old.
+
+# 可以使用关键字参数指定插入的值
+greeting3 = "Hello, my name is {name} and I am {age} years old.".format(name="Alice", age=25)
+print(greeting3)  # 输出：Hello, my name is Alice and I am 25 years old.
+```
+
+
+### 转义序列
+
+转义序列是一种特殊的字符序列，以反斜杠（\）开头，并在其后跟着一个或多个字符。用于表示非打印字符、特殊字符或具有特殊含义的字符。
+
+转义序列以反斜杠（\）开头，后跟一个或多个字符，用于表示特定的字符或操作。通过使用转义序列，我们可以在字符串中插入这些特殊字符，而不是将它们解释为普通字符。
+
+转义序列的定义和特性：
+
+- 转义序列以反斜杠（\）开头。
+- 转义序列由一个或多个字符组成。
+- 转义序列用于表示非打印字符、特殊字符或具有特殊含义的字符。
+- 转义序列可以在字符串、字符常量、正则表达式和其他上下文中使用。
+
+以下是一些常见的转义序列及其含义：
+
+- \n：换行符
+- \t：制表符
+- \r：回车符
+- \\'：单引号
+- \\"：双引号
+- \\：反斜杠
+
+```{python}
+# 在字符串中使用转义序列来表示特殊字符：
+print("Hello\tWorld")  # 输出：Hello    World
+print("I\'m a programmer")  # 输出：I'm a programmer
+print("She said, \"Hello!\"")  # 输出：She said, "Hello!"
+print("\"I love you.\" \n \"Me too.\"")
+# 在正则表达式中使用转义序列来匹配特殊字符：
+import re
+pattern = r"\d+"  # 匹配一个或多个数字
+result = re.findall(pattern, "12345")
+print(result)  # 输出：['12345']
+```
+
+
+## 变量
+
+变量是Python中的一个概念，用于存储和操作数据。它可以存储各种类型的数据，例如整数、浮点数、字符串等。
+
+特性：
+
+- 可以通过赋值操作将数据存储到变量中。
+- 可以使用变量名来访问变量中存储的数据。
+- 变量的值可以随时修改。
+- 变量可以在程序的不同位置使用和传递。
+- 变量的作用域可以限定在特定的代码块中。
+
+```{python}
+i = 5
+print(i)
+
+e = ( i + 1 ) * 2
+
+print(e)
+
+s = '''This is a multi-line string.
+This is the second line.'''
+
+print(s)
+```
+
+## 运行逻辑
+
+### 逻辑行和物理行
+
+逻辑行是指在代码中表示一个语句或命令的行，而物理行是指在代码文件中实际占据一行的文本。
+
+逻辑行可以跨越多个物理行，通过使用行连接符（\）将多个物理行连接成一个逻辑行。
+物理行则是代码文件中的实际行数，每个物理行都以换行符（\n）结尾。
+
+逻辑行的特征：
+
+- 一个逻辑行可以包含一个或多个语句或命令。
+- 逻辑行可以跨越多个物理行。
+- 逻辑行以换行符（\n）结尾。
+
+物理行的特征：
+
+- 物理行是代码文件中的实际行数。
+- 每个物理行都以换行符（\n）结尾。
+
+Python鼓励每个物理行对应一个逻辑行，即每行一个语句，以保证代码的可读性。
+
+```{python}
+# 逻辑行跨越多个物理行的示例
+x = 1 + \
+    2 + \
+    3
+
+print(x)
+
+# 逻辑行和物理行相同的示例
+y = 5
+print(y)
+
+y = 5;
+print(y);
+
+y = 5; print(y);
+
+y = 5; print(y)
+
+```
+
+### 缩进
+
+缩进是Python中的一种语法规则，用于表示代码块的层次结构。在Python中，缩进是强制性的，它决定了代码的执行顺序和逻辑关系。逻辑行的缩进级别决定了语句的分组，同组的语句构成一个代码块。
+
+基本概念：
+
+- 缩进是通过使用空格或制表符来实现的。
+- 缩进的数量和方式必须保持一致，通常建议使用四个空格进行缩进。
+- 缩进的层次结构决定了代码块的嵌套关系。
+
+特性：
+
+- 缩进用于定义函数、循环、条件语句等代码块。
+- 缩进可以提高代码的可读性和可维护性。
+- 缩进错误会导致语法错误或逻辑错误。
+
+代码示例：
+以下是一个缩进构成代码块的示例：
+
+```{python}
+def greet(name):
+    if name == "Alice":
+        print("Hello, Alice!")
+    else:
+        print("Hello, stranger!")
+
+greet("Bob")
+```
+
