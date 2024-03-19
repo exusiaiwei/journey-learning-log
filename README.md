@@ -26,11 +26,13 @@ A repository to organize and showcase my coding projects and learning journey.
 
 The "My-Coding-Journey" repository is a real-time record of my programming learning and project development process. It serves three main purposes:
 
-1. **Staging Area**: This repository acts as a staging area where I document what I am currently learning and the projects I am working on. You can find these contents in the "Doing" folder. As a dynamic area, "Doing" reflects my current learning focus and progress.
+1. **Staging Area**: This repository acts as a staging area where I document what I am currently learning and the projects I am working on. You can find these contents in the "doing" folder. As a dynamic area, "doing" reflects my current learning focus and progress.
 
-2. **Planning Area**: I use the "ToDo" folder to plan my future learning path and projects. In this folder, you can find a list of items that I plan to learn or develop. This helps me maintain a clear visibility of my future learning direction.
+2. **Planning Area**: I use the "todo" folder to plan my future learning path and projects. In this folder, you can find a list of items that I plan to learn or develop. This helps me maintain a clear visibility of my future learning direction.
 
 3. **Navigation Hub**: This repository also serves as a navigation hub, providing links to my other projects. Completed projects are moved out of the "My-Coding-Journey" repository and published as separate repositories on GitHub. In the "Related Repositories" section of the README, you can find links to these projects, allowing you to directly navigate to the respective repositories and explore the project details.
+
+In addition, I am currently studying coding on Exercism, and related code will be synchronized in the 'exercism' folder.
 
 Therefore, whether you want to know what I am currently working on, what I am planning to do next, or what projects I have already completed, "My-Coding-Journey" provides you with a comprehensive window into my programming learning and project development journey.
 
