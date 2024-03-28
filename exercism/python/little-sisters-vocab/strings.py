@@ -27,8 +27,8 @@ def make_word_groups(vocab_words):
     """
     prefix = vocab_words[0]
     non_prefix_words = vocab_words[1:]
-    prefix_words = [prefix + w for w in non_prefix_words]
-    result = [prefix] + prefix_words
+    prefixed_words = [prefix + w for w in non_prefix_words]
+    result = [prefix] + prefixed_words
     return ' :: '.join(result)
 
 
