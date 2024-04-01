@@ -53,7 +53,8 @@ def approx_average_is_average(hand):
     :return: bool - does one of the approximate averages equal the `true average`?
     """
 
-    return (hand[0] + hand[-1]) * 0.5 == card_average(hand) or hand[len(hand) // 2] == card_average(hand)
+    return (hand[0] + hand[-1]) * 0.5 == card_average(hand) or \
+           hand[len(hand) // 2] == card_average(hand)
 
 def average_even_is_average_odd(hand):
     """Return if the (average of even indexed card values) == (average of odd indexed card values).
