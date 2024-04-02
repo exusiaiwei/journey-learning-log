@@ -7,10 +7,7 @@ def round_scores(student_scores):
     :param student_scores: list - float or int of student exam scores.
     :return: list - student scores *rounded* to nearest integer value.
     """
-    int_scores = []
-    for score in student_scores:
-        int_scores.append(round(score))
-    return int_scores
+    return [round(item) for item in student_scores]
 
 
 def count_failed_students(student_scores):
@@ -19,11 +16,7 @@ def count_failed_students(student_scores):
     :param student_scores: list - containing int student scores.
     :return: int - count of student scores at or below 40.
     """
-    count = 0
-    for score in student_scores:
-        if score <= 40:
-            count += 1
-    return count
+    return sum(1 for score in student_scores if score <= 40)
 
 
 def above_threshold(student_scores, threshold):
@@ -54,8 +47,9 @@ def letter_grades(highest):
             86 <= "A" <= 100
     """
 
-    differential = (highest - 40) // 4
-    return [41,41+differential,41+ 2 * differential, 41 + 3 * differential]
+    step = int((highest-40)/4)
+    return [41 + step * num for num in range(4)]
+
 
 
 def student_ranking(student_scores, student_names):
