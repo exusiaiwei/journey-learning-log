@@ -1,0 +1,12 @@
+---
+title: "Hello Typst!"
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 2
+    keep-typ: true
+---
+hello,world!
+test
+# test
