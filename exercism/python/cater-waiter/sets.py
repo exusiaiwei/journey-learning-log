@@ -61,6 +61,7 @@ def categorize_dish(dish_name, dish_ingredients):
                     (OMNIVORE, "OMNIVORE")):
         if dish_ingredients.issubset(categoriz):
             return f"{dish_name}: {name}"
+    return f"{dish_name}: NO CATEGORY"
 
 
 def tag_special_ingredients(dish):
