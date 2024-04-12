@@ -1,2 +1,4 @@
+from string import ascii_lowercase
+ALPHABET = set(ascii_lowercase)
 def is_pangram(sentence):
-    pass
+    return ALPHABET.issubset(sentence.lower())
