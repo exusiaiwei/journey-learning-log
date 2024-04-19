@@ -7,17 +7,27 @@ TOLERANCE = {
     "brown": "1%", "red": "2%", "gold": "5%", "silver": "10%",
 }
 def resistor_label(colors):
-    ohms = (COLOR_DICT[colors[0]] * 10 + COLOR_DICT[colors[1]]) * (10 **  COLOR_DICT[colors[2]])
-    tolerance = TOLERANCE.get(colors[3], "")
-    if ohms >= 1000000000:
+    if len(colors) == 1 and colors[0] == "black":
+        return "0 ohms"
+    if len(colors) == 4:
+        ohms = (COLOR_DICT[colors[0]] * 10 + COLOR_DICT[colors[1]]) * (10 **  COLOR_DICT[colors[2]])
+        tolerance = TOLERANCE.get(colors[3], "")
+    if len(colors) == 5:
+        ohms = (COLOR_DICT[colors[0]] * 100 + COLOR_DICT[colors[1]] * 10 + COLOR_DICT[colors[2]]) * (10 **  COLOR_DICT[colors[3]])
+        tolerance = TOLERANCE.get(colors[4], "")
+    if ohms >= 1e9:
         prefix = "giga"
-        ohms //= 1000000000
-    elif ohms >= 1000000:
+        value = ohms / 1e9
+    elif ohms >= 1e6:
         prefix = "mega"
-        ohms //= 1000000
-    elif ohms >= 1000:
+        value = ohms / 1e6
+    elif ohms >= 1e3:
         prefix = "kilo"
-        ohms //= 1000
+        value = ohms / 1e3
     else:
         prefix = ""
-    return f"{ohms} {prefix}ohms ±{tolerance}"
+        value = ohms
+    if value == int(value):
+        return f"{int(value)} {prefix}ohms ±{tolerance}"
+    else:
+        return f"{value} {prefix}ohms ±{tolerance}"
