@@ -4,15 +4,16 @@ COLOR_DICT = {
 }
 def label(colors):
     ohms = (COLOR_DICT[colors[0]] * 10 + COLOR_DICT[colors[1]]) * (10 **  COLOR_DICT[colors[2]])
-    if ohms >= 1000000000:
+    if ohms >= 1e9:
         prefix = "giga"
-        ohms //= 1000000000
-    elif ohms >= 1000000:
+        value = ohms / 1e9
+    elif ohms >= 1e6:
         prefix = "mega"
-        ohms //= 1000000
-    elif ohms >= 1000:
+        value = ohms / 1e6
+    elif ohms >= 1e3:
         prefix = "kilo"
-        ohms //= 1000
+        value = ohms / 1e3
     else:
         prefix = ""
-    return f"{ohms} {prefix}ohms"
+        value = ohms
+    return f"{int(value)} {prefix}ohms"
