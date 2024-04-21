@@ -1,10 +1,14 @@
 def find(search_list, value):
-    median = len(search_list) // 2
-    if value not in search_list:
-        raise ValueError("value not in array")
-    elif value == search_list[median]:
-        return median
-    elif value < search_list[median]:
-        return find(search_list[:median], value)
-    else:
-        return median + find(search_list[median:], value)
+    left = 0
+    right = len(search_list) - 1
+
+    while left <= right:
+        median = (left + right) // 2
+        if search_list[median] == value:
+            return median
+        elif search_list[median] < value:
+            left = median + 1
+        else:
+            right = median - 1
+
+    raise ValueError("value not in array")
