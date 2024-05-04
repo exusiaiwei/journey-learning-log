@@ -1,30 +1,34 @@
 def append(list1, list2):
-    pass
+    return list1 + list2
 
 
 def concat(lists):
-    pass
+    return [item for sublist in lists for item in sublist]
 
 
 def filter(function, list):
-    pass
+    return [item for item in list if function(item)]
 
 
 def length(list):
-    pass
+    return len(list)
 
 
 def map(function, list):
-    pass
+    return [function(item) for item in list]
 
 
-def foldl(function, list, initial):
-    pass
+def foldl(function, lst, initial):
+    if not lst:
+        return initial
+    return foldl(function, lst[1:], function(initial, lst[0]))
 
 
-def foldr(function, list, initial):
-    pass
+def foldr(function, lst, initial):
+    if not lst:
+        return initial
+    return function(foldr(function, lst[1:], initial), lst[0])
 
 
 def reverse(list):
-    pass
+    return list[::-1]
