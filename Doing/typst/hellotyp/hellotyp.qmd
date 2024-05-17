@@ -6,6 +6,8 @@ format:
     section-numbering: 1.1.a
     columns: 2
     keep-typ: true
+    template: main.typ
+
 ---
 hello,world!
 test
