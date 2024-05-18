@@ -1,6 +1,6 @@
 // Update this import to where you put the `lapreprint.typ` file
 // It should probably be in the same folder
-#import "../../lapreprint.typ": template
+#import "lapreprint.typ": template
 
 #show: template.with(
   title: "Pixels and their Neighbours",
