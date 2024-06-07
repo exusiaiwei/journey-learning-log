@@ -1,46 +1,60 @@
-<!--Please do not remove this part-->
 
 ![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 
-# Script Title
+# Word Frequency Counter
 
-Add a jpeg/png/gif file here if applicable
-
-<!--An image is an illustration for your project, the tip here is using your sense of humour as much as you can :D 
-
-You can copy paste my markdown photo insert as following:
 <p align="center">
-<img src="your-source-is-here" width=40% height=40%>
--->
+<img src="https://your-image-source-here" width=40% height=40%>
+</p>
 
 ## 🛠️ Description
 
-<!--Remove the below lines and add yours -->
-
-This is a 
+This script reads all `.txt` files in a specified directory, tokenizes the text, and counts the frequency of each word, excluding common stopwords and punctuation.
 
 ## ⚙️ Languages or Frameworks Used
 
-<!--Remove the below lines and add yours -->
+- Python
+- NLTK (Natural Language Toolkit)
 
-Modules required to be able to use the script successfully
-and how to install them.
-(If there are a lot of them, including a `requirements.txt` file will work better.)
+## 📦 Requirements
+
+Install the necessary Python packages:
+
+```sh
+pip install nltk
+```
 
 ## 🌟 How to run
 
-<!--Remove the below lines and add yours -->
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/ndleah/python-mini-project.git
+   cd Word_Frequency_Statistics
+   ```
 
-Steps on how to run the script along with suitable examples.
+2. **Create and activate a Conda environment** (optional but recommended):
+   ```sh
+conda create --name word_freq_env python=3.8
+conda activate word_freq_env
+   ```
+
+3. **Install the required packages**:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. **Run the script**:
+   ```sh
+   python main.py
+   ```
+
+   Make sure to replace `directory` in the script with the path to the directory containing your `.txt` files.
 
 ## 📺 Demo
 
-Add a Screenshot/GIF showing the sample use of the script (jpeg/png/gif).
+![demo](demo.png)
 
 ## 🤖 Author
 
-<!--Remove the below lines and add yours -->
-
-The name of the author of the code goes here.
-If you have a web site or a Git user name, feel free to link.
+The name of the author of the code goes here. Feel free to link to your [GitHub](https://github.com/your-username) or personal website.

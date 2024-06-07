@@ -1,0 +1,24 @@
+Zipf's law (/zɪf/, German: [t͡sɪpf]) is an empirical law that often holds, approximately, when a list of measured values is sorted in decreasing order. It states that the value of the nth entry is inversely proportional to n.
+
+The best known instance of Zipf's law applies to the frequency table of words in a text or corpus of natural language:
+
+{\displaystyle {\text{word frequency}}\propto {\frac {1}{\text{word rank}}}.}
+It is usually found that the most common word occurs approximately twice as often as the next common one, three times as often as the third most common, and so on. For example, in the Brown Corpus of American English text, the word "the" is the most frequently occurring word, and by itself accounts for nearly 7% of all word occurrences (69,971 out of slightly over 1 million). True to Zipf's Law, the second-place word "of" accounts for slightly over 3.5% of words (36,411 occurrences), followed by "and" (28,852).[2] It is often used in the following form, called Zipf-Mandelbrot law:
+{\displaystyle {\text{frequency}}\propto {\frac {1}{({\text{rank}}+b)^{a}}}}
+where {\displaystyle a,b} are fitted parameters, with {\displaystyle a\approx 1}, and {\displaystyle b\approx 2.7}.[1]
+This law is named after the American linguist George Kingsley Zipf,[3][4][5] and is still an important concept in quantitative linguistics. It has been found to apply to many other types of data studied in the physical and social sciences.
+
+In mathematical statistics, the concept has been formalized as the Zipfian distribution: a family of related discrete probability distributions whose rank-frequency distribution is an inverse power law relation. They are related to Benford's law and the Pareto distribution.
+
+Some sets of time-dependent empirical data deviate somewhat from Zipf's law. Such empirical distributions are said to be quasi-Zipfian.
+
+History[edit]
+In 1913, the German physicist Felix Auerbach observed an inverse proportionality between the population sizes of cities, and their ranks when sorted by decreasing order of that variable.[6]
+
+Zipf's law has been discovered before Zipf,[a] by the French stenographer Jean-Baptiste Estoup' Gammes Stenographiques (4th ed) in 1916,[7] with G. Dewey in 1923,[8] and with E. Condon in 1928.[9]
+
+The same relation for frequencies of words in natural language texts was observed by George Zipf in 1932,[4] but he never claimed to have originated it. In fact, Zipf did not like mathematics. In his 1932 publication,[10] the author speaks with disdain about mathematical involvement in linguistics, a. o. ibidem, p. 21: (…) let me say here for the sake of any mathematician who may plan to formulate the ensuing data more exactly, the ability of the highly intense positive to become the highly intense negative, in my opinion, introduces the devil into the formula in the form of {\displaystyle {\sqrt {-i}}}. The only mathematical expression Zipf used looks like a.b2 = constant, which he "borrowed" from Alfred J. Lotka's 1926 publication.[11]
+
+The same relationship was found to occur in many other contexts, and for other variables besides frequency.[1] For example, when corporations are ranked by decreasing size, their sizes are found to be inversely proportional to the rank.[12] The same relation is found for personal incomes (where it is called Pareto principle[13]), number of people watching the same TV channel,[14] notes in music,[15] cells transcriptomes,[16][17] and more.
+
+In 1992 bioinformatician Wentian Li published a short paper[18] showing that Zipf's law emerges even in randomly generated texts. It included proof that the power law form of Zipf's law was a byproduct of ordering words by rank.
