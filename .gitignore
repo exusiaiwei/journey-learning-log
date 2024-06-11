@@ -18,3 +18,5 @@ env/
 .Ruserdata
 
 config_private.json
+output_files
+output_txt_files

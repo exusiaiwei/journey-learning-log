@@ -82,8 +82,13 @@ output_file = os.path.join(output_folder, "api_responses.csv")
 # 检查文件是否存在，决定是否写入表头
 write_header = not os.path.isfile(output_file)
 
+# 将配置名称添加到结果中
+for result in results:
+    result["config_name"] = selected_config["name"]
+
 # 将结果保存到 CSV 文件中
 results_df = pd.DataFrame(results)
+results_df = results_df[["config_name"] + [col for col in results_df.columns if col != "config_name"]]  # 将 config_name 放到第一列
 results_df.to_csv(output_file, mode='a', index=False, header=write_header)
 
 print(f"请求和响应已保存到 {output_file}。")
