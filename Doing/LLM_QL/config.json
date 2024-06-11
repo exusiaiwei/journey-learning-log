@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "name": "Configuration 1",
+      "api_key": "<your-openai-api-key>",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "model": "gpt-4.0-turbo",
+      "prompt": "Translate the following English text to French: 'Hello, how are you?'",
+      "temperature": 0.5,
+      "max_tokens": 1024,
+      "call_count": 10,
+      "top_p": 0.9,
+      "frequency_penalty": 0.2,
+      "presence_penalty": 0.3
+    },
+    {
+      "name": "Configuration 2",
+      "api_key": "<your-openai-api-key>",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "model": "gpt-4.0-turbo",
+      "prompt": "Write a short story about a cat and a mouse in a forest.",
+      "temperature": 0.8,
+      "max_tokens": 1024,
+      "call_count": 5,
+      "top_p": 1.0,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0
+    }
+  ]
+}

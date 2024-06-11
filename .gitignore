@@ -16,3 +16,5 @@ env/
 .Rhistory
 .RData
 .Ruserdata
+
+config_private.json
