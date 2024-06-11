@@ -3,6 +3,8 @@ import json
 import pandas as pd
 import os
 import time
+from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 检查是否存在私有配置文件
 config_file = 'config_private.json' if os.path.isfile('config_private.json') else 'config.json'
@@ -37,13 +39,13 @@ payload_template = {
 # 初始化存储结果的列表
 results = []
 
-# 调用 API 并收集响应
-for _ in range(selected_config["call_count"]):
+def fetch_response():
     start_time = time.time()
     response = requests.post(url, headers=headers, data=json.dumps(payload_template))
     end_time = time.time()
 
     response_json = response.json()
+    response_data = []
     if "choices" in response_json:
         for choice in response_json["choices"]:
             result = {
@@ -59,9 +61,16 @@ for _ in range(selected_config["call_count"]):
                 "response_time": end_time - start_time,
                 "total_tokens": response_json.get("usage", {}).get("total_tokens", "N/A")
             }
-            results.append(result)
+            response_data.append(result)
     else:
         print(f"API 响应中缺少 'choices' 键: {response_json}")
+    return response_data
+
+# 使用 ThreadPoolExecutor 进行并发请求
+with ThreadPoolExecutor(max_workers=10) as executor:
+    futures = [executor.submit(fetch_response) for _ in range(selected_config["call_count"])]
+    for future in tqdm(as_completed(futures), total=selected_config["call_count"], desc="Processing API calls"):
+        results.extend(future.result())
 
 # 创建输出文件夹（如果不存在）
 output_folder = "output_files"
