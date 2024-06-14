@@ -1,0 +1,200 @@
+---
+title: "Zipf-Mandelbrot Distribution Analysis"
+format:
+  html:
+    code-fold: true
+---
+
+# 安装和加载所需的 R 包
+
+首先，我们需要确保所有必要的 R 包都已安装并加载。这些包包括 `zipfR`, `ggplot2`, `stringr`, `scales`, `tibble`, `dplyr`, `gss`, `nortest` 和 `tidyr`。
+
+```{r setup, include=FALSE}
+required_packages <- c("zipfR", "ggplot2", "stringr", "scales", "tibble", "dplyr", "gss", "nortest", "tidyr")
+
+install_and_load <- function(package) {
+  if (!require(package, character.only = TRUE)) {
+    install.packages(package, dependencies = TRUE)
+    library(package, character.only = TRUE)
+  }
+}
+
+invisible(lapply(required_packages, install_and_load))
+```
+
+# 设置文件路径并读取文件
+
+我们将设置包含 `.txt` 文件的文件夹路径，并识别所有这些文件。
+
+```{r}
+folder_path <- "output_txt_files"
+files <- list.files(folder_path, pattern = "\\.txt$", full.names = TRUE)
+```
+
+# 初始化结果数据框并处理每个文件
+
+我们将初始化一个空的数据框来存储结果，并处理每个文件。
+
+```{r}
+results <- data.frame(File = character(), Type = character(), Model = character(), Rank = numeric(), Frequency = numeric(), stringsAsFactors = FALSE)
+
+process_file <- function(file) {
+  text <- tolower(readLines(file, warn = FALSE))
+  text <- unlist(strsplit(text, "\\W+"))
+  freq <- sort(table(text), decreasing = TRUE)
+
+  file_info <- str_match(basename(file), "(.*) (.*)\\d_responses.txt")
+  if (length(file_info) < 3) return(NULL)
+
+  temp_df <- data.frame(File = basename(file), Type = file_info[3], Model = file_info[2], Rank = seq_along(freq), Frequency = as.numeric(freq), stringsAsFactors = FALSE)
+
+  return(temp_df)
+}
+
+results <- do.call(rbind, lapply(files, process_file))
+print(results)
+```
+
+# 进行 Zipf-Mandelbrot 拟合
+
+我们将对每个文件进行 Zipf-Mandelbrot 分布的拟合。
+
+```{r}
+fit_results <- list()
+parameters <- data.frame(File = character(), Model = character(), Type = character(), alpha = numeric(), B = numeric(), C = numeric(), X2 = numeric(), df = numeric(), p = numeric(), stringsAsFactors = FALSE)
+
+process_spc_fit <- function(file) {
+  data <- subset(results, File == file)
+  N <- sum(data$Frequency)
+  V <- length(data$Frequency)
+  Vm <- table(data$Frequency)
+  m <- as.numeric(names(Vm))
+
+  file_info <- str_match(basename(file), "(.*) (.*)\\d_responses.txt")
+  if (length(file_info) < 3) return(NULL)
+
+  spc_obj <- tryCatch({
+    spc(N = N, V = V, Vm = as.numeric(Vm), m = m)
+  }, error = function(e) {
+    message(paste("Error in spc function:", e))
+    NULL
+  })
+
+  if (!is.null(spc_obj)) {
+    fit <- tryCatch({
+      lnre("zm", spc_obj)
+    }, error = function(e) {
+      message(paste("Error in lnre function:", e))
+      NULL
+    })
+
+    if (!is.null(fit)) {
+      alpha <- fit$param$alpha
+      B <- fit$param$B
+      C <- if ("C" %in% names(fit$param)) fit$param$C else NA
+      X2 <- fit$gof$X2
+      df <- fit$gof$df
+      p <- fit$gof$p
+
+      parameters <<- rbind(parameters, data.frame(File = basename(file), Model = file_info[2], Type = file_info[3], alpha = alpha, B = B, C = C, X2 = X2, df = df, p = p, stringsAsFactors = FALSE))
+
+      fit_results[[file]] <<- fit
+    } else {
+      parameters <<- rbind(parameters, data.frame(File = basename(file), Model = file_info[2], Type = file_info[3], alpha = NA, B = NA, C = NA, X2 = NA, df = NA, p = NA, stringsAsFactors = FALSE))
+    }
+  } else {
+    parameters <<- rbind(parameters, data.frame(File = basename(file), Model = file_info[2], Type = file_info[3], alpha = NA, B = NA, C = NA, X2 = NA, df = NA, p = NA, stringsAsFactors = FALSE))
+  }
+}
+
+invisible(lapply(unique(results$File), process_spc_fit))
+print(parameters)
+write.csv(parameters, "fitting_parameters.csv", row.names = FALSE)
+```
+
+# 结果可视化
+
+我们将结果可视化，展示 Zipf-Mandelbrot 分布。
+
+```{r}
+model_colors <- c("Deepseek" = "#1f77b4", "qwen2-72b-instruct" = "#39f5ff", "qwen2-7b-instruct" = "#affc68", "GPT4o" = "#fb59e0", "GPT3.5" = "#D62728")
+
+ggplot(results, aes(x = Rank, y = Frequency, color = Model, shape = Type)) +
+  geom_point(alpha = 0.2) +
+  geom_smooth(se = FALSE, method = "loess") +
+  scale_color_manual(values = model_colors) +
+  labs(title = "Zipf-Mandelbrot Distribution (Log Scale)", x = "Rank", y = "Frequency") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+# ANOVA 分析
+
+我们将对结果进行 ANOVA 分析。
+
+```{r}
+results <- results %>%
+  mutate(Rank = as.numeric(Rank), Frequency = as.numeric(Frequency), Model = as.factor(Model), Type = as.factor(Type))
+
+anova_model <- aov(Frequency ~ Rank * Model * Type, data = results)
+anova_summary <- summary(anova_model)
+print(anova_summary)
+```
+
+# 正态性检验
+
+我们将对残差进行正态性检验。
+
+```{r}
+residuals <- residuals(anova_model)
+ks_test <- lillie.test(residuals)
+print(ks_test)
+
+# 绘制正态性检验图
+qqnorm(residuals)
+qqline(residuals, col = "red")
+hist(residuals, breaks = 30, main = "Histogram of Residuals", xlab = "Residuals")
+plot(anova_model, which = 1)
+```
+
+# 进一步的可视化
+
+我们将绘制箱线图和交互图，以进一步分析频率与模型和类型之间的关系。
+
+```{r}
+ggplot(results, aes(x = Model, y = Frequency, fill = Type)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Frequency by Model and Type", x = "Model", y = "Frequency") +
+  theme_minimal()
+
+interaction_data <- results %>%
+  group_by(Model, Type) %>%
+  summarise(mean_frequency = mean(Frequency))
+
+ggplot(interaction_data, aes(x = Model, y = mean_frequency, color = Type, group = Type)) +
+  geom_line(size = 1) +
+  geom_point(size = 3) +
+  labs(title = "Interaction Plot of Model and Type on Frequency", x = "Model", y = "Mean Frequency") +
+  theme_minimal()
+```
+
+# 频率均值和误差条形图
+
+我们将绘制带有误差条的频率均值图。
+
+```{r}
+summary_data <- results %>%
+  group_by(Model, Type) %>%
+  summarise(mean_frequency = mean(Frequency), se_frequency = sd(Frequency) / sqrt(n()))
+
+ggplot(summary_data, aes(x = Model, y = mean_frequency, fill = Type)) +
+  geom_bar(stat = "identity", position = position_dodge(0.9), width = 0.7) +
+  geom_errorbar(aes(ymin = mean_frequency - se_frequency, ymax = mean_frequency + se_frequency), width = 0.2, position = position_dodge(0.9)) +
+  labs(title = "Mean Frequency with Error Bars by Model and Type", x = "Model", y = "Mean Frequency") +
+  theme_minimal()
+```
+```
+
+通过这种格式，代码变得更加结构化、易读和可维护。每个代码块都有相应的文字说明，使得文档更加清晰。
