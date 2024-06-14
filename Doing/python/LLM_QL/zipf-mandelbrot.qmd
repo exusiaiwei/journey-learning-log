@@ -112,6 +112,69 @@ print(parameters)
 write.csv(parameters, "fitting_parameters.csv", row.names = FALSE)
 ```
 
+# 计算不同模型和类型的参数均值和标准差
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+# 计算均值和标准差
+summary_stats <- parameters %>%
+  group_by(Model, Type) %>%
+  summarise(alpha_mean = mean(alpha, na.rm = TRUE),
+            alpha_sd = sd(alpha, na.rm = TRUE),
+            B_mean = mean(B, na.rm = TRUE),
+            B_sd = sd(B, na.rm = TRUE))
+
+print(summary_stats)
+```
+
+# 统计检验
+
+我们将使用 ANOVA 检验不同模型和类型之间的参数差异。
+
+```{r}
+# ANOVA 检验 Model 对 alpha 的影响
+anova_alpha_model <- aov(alpha ~ Model, data = parameters)
+summary(anova_alpha_model)
+
+# ANOVA 检验 Type 对 alpha 的影响
+anova_alpha_type <- aov(alpha ~ Type, data = parameters)
+summary(anova_alpha_type)
+
+# ANOVA 检验 Model 对 B 的影响
+anova_B_model <- aov(B ~ Model, data = parameters)
+summary(anova_B_model)
+
+# ANOVA 检验 Type 对 B 的影响
+anova_B_type <- aov(B ~ Type, data = parameters)
+summary(anova_B_type)
+```
+
+# 可视化
+
+我们使用 ggplot2 来可视化不同模型和类型的参数分布。
+
+```{r}
+# 可视化 alpha 参数
+ggplot(parameters, aes(x = Model, y = alpha, fill = Type)) +
+  geom_boxplot() +
+  labs(title = "Alpha 参数在不同模型和类型中的分布", x = "Model", y = "Alpha") +
+  theme_minimal()
+
+# 可视化 B 参数
+ggplot(parameters, aes(x = Model, y = B, fill = Type)) +
+  geom_boxplot() +
+  labs(title = "B 参数在不同模型和类型中的分布", x = "Model", y = "B") +
+  theme_minimal()
+```
+通过以上步骤，你可以：
+
+1. **计算并查看**各个模型和类型的参数均值和标准差。
+2. **进行 ANOVA 检验**，查看不同模型和类型对参数的显著性差异。
+3. **生成箱线图**，可视化不同模型和类型的参数分布。
+
+
 # 结果可视化
 
 我们将结果可视化，展示 Zipf-Mandelbrot 分布。
