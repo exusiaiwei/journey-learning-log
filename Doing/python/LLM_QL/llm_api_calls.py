@@ -83,6 +83,7 @@ def fetch_response():
         for choice in response_json["choices"]:
             result = {
                 "model": selected_config["model"],
+                "model_alias":selected_config["model_alias"],
                 "prompt": selected_config["prompt"],
                 "temperature": selected_config["temperature"],
                 "max_tokens": selected_config["max_tokens"],
