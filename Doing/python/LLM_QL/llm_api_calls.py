@@ -84,6 +84,7 @@ def fetch_response():
             result = {
                 "model": selected_config["model"],
                 "model_alias":selected_config["model_alias"],
+                "type":selected_config["type"],
                 "prompt": selected_config["prompt"],
                 "temperature": selected_config["temperature"],
                 "max_tokens": selected_config["max_tokens"],
