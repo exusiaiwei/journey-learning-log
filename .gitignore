@@ -20,3 +20,4 @@ env/
 config_private.json
 output_files
 output_txt_files
+api_private.json
