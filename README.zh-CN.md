@@ -1,69 +1,83 @@
-# 我的学习代码仓库
+<div align="center">
+  <h1>学习旅程日志</h1>
+  <p>
+    <a href="README.md">English</a> |
+    <b>简体中文</b>
+  </p>
+  <!-- 徽章 -->
+  <p>
+    <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg" alt="readme 样式">
+    <img src="https://img.shields.io/github/stars/exusiaiwei/journey-learning-log" alt="星标数">
+    <img src="https://img.shields.io/github/forks/exusiaiwei/journey-learning-log" alt="分支数">
+    <img src="https://img.shields.io/github/license/exusiaiwei/journey-learning-log" alt="许可证">
+    <img src="https://img.shields.io/github/last-commit/exusiaiwei/journey-learning-log" alt="最后提交">
+  </p>
+</div>
 
-[English Version](https://github.com/exusiaiwei/My-Coding-Journey/blob/main/readme.md)
+# 🚀 学习旅程日志
 
-![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
+这个仓库用于记录我的整体学习进展、反思和计划。
 
-![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+## 📚 目录
 
-![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
+- [🚀 学习旅程日志](#-学习旅程日志)
+	- [📚 目录](#-目录)
+	- [🌟 背景](#-背景)
+	- [📁 仓库结构](#-仓库结构)
+	- [🎯 目标和计划](#-目标和计划)
+	- [🔗 相关仓库](#-相关仓库)
+		- [研究项目](#研究项目)
+		- [学习领域](#学习领域)
+		- [独立项目](#独立项目)
+	- [🧑‍💻 维护者](#-维护者)
+	- [📄 许可证](#-许可证)
 
-一个用于组织和展示我的编程项目和学习历程的仓库。
+## 🌟 背景
 
-## 目录
+"学习旅程日志"仓库作为我学习旅程、反思和未来计划的全面记录。它旨在帮助我跟踪进度、设定目标，并清晰地概览我的个人和专业发展。
 
-- [我的学习代码仓库](#我的学习代码仓库)
-	- [目录](#目录)
-	- [背景](#背景)
-	- [安装](#安装)
-	- [徽章](#徽章)
-	- [相关仓库](#相关仓库)
-	- [许可证](#许可证)
+## 📁 仓库结构
 
-## 背景
+```
+journey-learning-log/
+├── README.md
+└── goals_and_plans/
+```
 
-"My-Coding-Journey"仓库是我编程学习与项目开发流程的实时记录。它有三个主要功能：
+- `goals_and_plans/`：存储长期目标和详细的学习计划。
 
-1. **暂存库**：这个仓库充当了一个暂存区，我会在这里记录我正在学习的内容以及正在进行的项目。您可以在 "doing" 文件夹中找到这些内容。作为一个动态变化的区域，"doing" 反映了我当前的学习焦点与进度。
+## 🎯 目标和计划
 
-2. **计划库**：我使用 "todo" 文件夹来规划我未来的学习路径和项目。在这个文件夹里，您可以找到我计划学习或开发的事项列表。这可以帮助我保持对未来学习方向的清晰可见。
+我使用 Markdown 任务列表来规划和跟踪我的学习进度。
 
-3. **导航页**：此仓库同样作为一个导航中心，提供前往我其他项目的链接。已经完成的项目会被移出 "My-Coding-Journey"仓库，并在 GitHub 上作为一个新的库发布。在 README 中的 "相关仓库" 部分，您可以找到这些项目的链接，直接跳转到相应的库去查看项目的详细内容。
 
-此外，我现在正在使用 Exercism 进行代码学习，相关的代码也会在 "exercism" 文件夹中同步。
+## 🔗 相关仓库
 
-因此，无论你是想了解我正在做什么，即将要做什么，还是想看看我已经完成了哪些项目，"My-Coding-Journey" 都为你提供了一个全面了解我编程学习和项目开发情况的窗口。
+### 研究项目
 
-## 安装
+- [supp-eyetracking-ll-2022](https://github.com/exusiaiwei/supp-eyetracking-ll-2022)：这个项目是我在眼动追踪技术研究中积累的程序和数据。设备来自武汉大学语言学习与认知科学实验室。
 
-由于这只是一个用于展示和记录代码学习的仓库，无需进行安装。
+- [supp-social-media-style-2023](https://github.com/exusiaiwei/supp-social-media-style-2023)：这个仓库包含"基于计量指标的社交媒体风格分类研究"项目的补充材料。包括语料库、语料处理代码和数据分析工具。
 
-## 徽章
+### 学习领域
 
-![standard-readme 符合规范](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
+- [area-python-learning](https://github.com/exusiaiwei/area-python-learning)：这个仓库专门用于我的 Python 学习之旅，包含与 Python 编程相关的笔记、练习和项目。
 
-![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+### 独立项目
 
-![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
+- [uni-saarland-survival-guide](https://github.com/exusiaiwei/uni-saarland-survival-guide)：萨尔大学学生综合生存指南，由学生创建，为学生服务。📚
 
-## 相关仓库
+## 🧑‍💻 维护者
 
-- [undergraduate-graduation-project-attachment](https://github.com/exusiaiwei/undergraduate-graduation-project-attachment)：此项目包含了我的本科毕业论文的配套材料，其中主要包括语料库及其处理、数据分析的相关代码。
+[@exusiaiwei](https://github.com/exusiaiwei)
 
-- [EyeTracking-Experiment-WZC](https://github.com/exusiaiwei/EyeTracking-Experiment-WZC)：此项目储存了我使用Eyelink眼动追踪设备进行实验的程序和数据。
-
-- [My-Python-Learning](https://github.com/exusiaiwei/My-Python-Learning)：这是我个人学习Python的笔记和实践记录，主要包含了我在Python学习路径上的探索和心得。
-
-- [WHU-Recommendation-Letter-Template](https://github.com/exusiaiwei/WHU-Recommendation-Letter-Template)：这个项目提供了一份我为武汉大学创建的Latex推荐信模板。
-
-- [BLCU-Recommendation-Letter-Template](https://github.com/exusiaiwei/BLCU-Recommendation-Letter-Template)：这个项目提供了一份我为北京语言大学创建的Latex推荐信模板。
-
-- [exusiaiwei.github.io](https://github.com/exusiaiwei/exusiaiwei.github.io)：这是我个人的学术主页，包含了我个人的学术成果、研究兴趣、项目以及联系方式等信息。
-
-- [My-brilliant-CV](https://github.com/exusiaiwei/My-brilliant-CV)：这个项目中包含了我的个人简历和CV，使用来自 mintyfrankie/brilliant-CV 的Typst模板进行编写。
-
-@exusiaiwei
-
-## 许可证
+## 📄 许可证
 
 [MIT](LICENSE) © exusiaiwei
+
+<div align="center">
+  <p>
+    <a href="#-学习旅程日志">返回顶部</a>
+  </p>
+</div>
+```

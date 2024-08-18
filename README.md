@@ -1,73 +1,83 @@
-# My Coding Journey
+<div align="center">
+  <h1>Journey Learning Log</h1>
+  <p>
+    <b>English</b> |
+    <a href="README.zh-CN.md">简体中文</a>
+  </p>
+  <!-- Badges -->
+  <p>
+    <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg" alt="readme style">
+    <img src="https://img.shields.io/github/stars/exusiaiwei/journey-learning-log" alt="stars">
+    <img src="https://img.shields.io/github/forks/exusiaiwei/journey-learning-log" alt="forks">
+    <img src="https://img.shields.io/github/license/exusiaiwei/journey-learning-log" alt="license">
+    <img src="https://img.shields.io/github/last-commit/exusiaiwei/journey-learning-log" alt="last-commit">
+  </p>
+</div>
+
+# 🚀 Journey Learning Log
+
+A repository to document my overall learning progress, reflections, and plans.
+
+## 📚 Table of Contents
+
+- [🚀 Journey Learning Log](#-journey-learning-log)
+  - [📚 Table of Contents](#-table-of-contents)
+  - [🌟 Background](#-background)
+  - [📁 Repository Structure](#-repository-structure)
+  - [🎯 Goals and Plans](#-goals-and-plans)
+  - [🔗 Related Repositories](#-related-repositories)
+    - [Research Projects](#research-projects)
+    - [Learning Areas](#learning-areas)
+    - [Independent Projects](#independent-projects)
+  - [🧑‍💻 Maintainer](#-maintainer)
+  - [📄 License](#-license)
+
+## 🌟 Background
+
+The "Journey Learning Log" repository serves as a comprehensive record of my learning journey, reflections, and future plans. It's designed to help me track my progress, set goals, and maintain a clear overview of my personal and professional development.
+
+## 📁 Repository Structure
+
+```
+journey-learning-log/
+├── README.md
+└── goals_and_plans/
+```
+
+- `goals_and_plans/`: Stores long-term goals and detailed learning plans.
+
+## 🎯 Goals and Plans
+
+I use Markdown task lists to plan and track my learning progress. These lists help me break down my goals into manageable tasks and monitor my progress over time.
 
 
-[中文版](https://github.com/exusiaiwei/My-Coding-Journey/blob/main/README.zh-CN.md)
 
-![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
+## 🔗 Related Repositories
 
-![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
+### Research Projects
 
-![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
+- [supp-eyetracking-ll-2022](https://github.com/exusiaiwei/supp-eyetracking-ll-2022): This project is an accumulation of programs and data from my study and research involving eye-tracking technology. The equipment is from the Language Learning and Cognitive Science Laboratory at Wuhan University.
 
-A repository to organize and showcase my coding projects and learning journey.
+- [supp-social-media-style-2023](https://github.com/exusiaiwei/supp-social-media-style-2023): This repository contains supplementary materials for the research project "Research on Social Media Style Classification Based on Quantitative Indicators". It includes corpora, code for corpus processing, and data analysis tools.
 
-## Table of Contents
+### Learning Areas
 
-- [My Coding Journey](#my-coding-journey)
-  - [Table of Contents](#table-of-contents)
-  - [Background](#background)
-  - [Installation](#installation)
-  - [Badges](#badges)
-  - [Related Repositories](#related-repositories)
-  - [Maintainer](#maintainer)
-  - [License](#license)
+- [area-python-learning](https://github.com/exusiaiwei/area-python-learning): This repository is dedicated to my Python learning journey, containing notes, exercises, and projects related to Python programming.
 
-## Background
+### Independent Projects
 
-The "My-Coding-Journey" repository is a real-time record of my programming learning and project development process. It serves three main purposes:
+- [uni-saarland-survival-guide](https://github.com/exusiaiwei/uni-saarland-survival-guide): A comprehensive survival guide for students at Saarland University, created by students, for students. 📚
 
-1. **Staging Area**: This repository acts as a staging area where I document what I am currently learning and the projects I am working on. You can find these contents in the "doing" folder. As a dynamic area, "doing" reflects my current learning focus and progress.
+## 🧑‍💻 Maintainer
 
-2. **Planning Area**: I use the "todo" folder to plan my future learning path and projects. In this folder, you can find a list of items that I plan to learn or develop. This helps me maintain a clear visibility of my future learning direction.
+[@exusiaiwei](https://github.com/exusiaiwei)
 
-3. **Navigation Hub**: This repository also serves as a navigation hub, providing links to my other projects. Completed projects are moved out of the "My-Coding-Journey" repository and published as separate repositories on GitHub. In the "Related Repositories" section of the README, you can find links to these projects, allowing you to directly navigate to the respective repositories and explore the project details.
-
-In addition, I am currently studying coding on Exercism, and related code will be synchronized in the 'exercism' folder.
-
-Therefore, whether you want to know what I am currently working on, what I am planning to do next, or what projects I have already completed, "My-Coding-Journey" provides you with a comprehensive window into my programming learning and project development journey.
-
-## Installation
-
-As this is simply a showcase and record repository for code learning purposes, there is no installation required.
-
-## Badges
-
-![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)
-
-![GitHub Repo stars](https://img.shields.io/github/stars/exusiaiwei/My-Coding-Journey)
-
-![GitHub forks](https://img.shields.io/github/forks/exusiaiwei/My-Coding-Journey)
-
-## Related Repositories
-
-- [undergraduate-graduation-project-attachment](https://github.com/exusiaiwei/undergraduate-graduation-project-attachment): This project contains the supporting materials for my undergraduate graduation thesis, including the corpus and its processing, as well as the relevant code for data analysis.
-
-- [EyeTracking-Experiment-WZC](https://github.com/exusiaiwei/EyeTracking-Experiment-WZC): This project stores the programs and data for the experiments I conducted using the Eyelink eye-tracking device.
-
-- [My-Python-Learning](https://github.com/exusiaiwei/My-Python-Learning): This is my personal notes and practice records for learning Python, mainly documenting my exploration and insights on the Python learning path.
-
-- [WHU-Recommendation-Letter-Template](https://github.com/exusiaiwei/WHU-Recommendation-Letter-Template): This project provides a LaTeX recommendation letter template that I created for Wuhan University.
-
-- [BLCU-Recommendation-Letter-Template](https://github.com/exusiaiwei/BLCU-Recommendation-Letter-Template): This project provides a LaTeX recommendation letter template that I created for Beijing Language and Culture University.
-
-- [exusiaiwei.github.io](https://github.com/exusiaiwei/exusiaiwei.github.io): This is my personal academic homepage, which includes information about my academic achievements, research interests, projects, and contact details.
-
-- [My-brilliant-CV](https://github.com/exusiaiwei/My-brilliant-CV): This project contains my personal resume and CV, written using the Typst template from mintyfrankie/brilliant-CV.
-
-## Maintainer
-
-@exusiaiwei
-
-## License
+## 📄 License
 
 [MIT](LICENSE) © exusiaiwei
+
+<div align="center">
+  <p>
+    <a href="#-journey-learning-log">Back to Top</a>
+  </p>
+</div>
