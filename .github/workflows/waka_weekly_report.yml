@@ -118,7 +118,7 @@ jobs:
           Keep coding, keep learning, and may your bugs be few and your commits be many! 💻✨
           """
 
-          #  保存报告
+          # 保存报告
           week_number = end_date.strftime('%Y-W%V')
           with open(f"weekly_reports/report_{week_number}.md", "w") as f:
               f.write(report)
