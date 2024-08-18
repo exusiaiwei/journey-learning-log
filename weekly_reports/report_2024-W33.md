@@ -1,83 +1,101 @@
-<div align="center">
-  <h1>Journey Learning Log</h1>
-  <p>
-    <b>English</b> |
-    <a href="README.zh-CN.md">简体中文</a>
-  </p>
-  <!-- Badges -->
-  <p>
-    <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg" alt="readme style">
-    <img src="https://img.shields.io/github/stars/exusiaiwei/journey-learning-log" alt="stars">
-    <img src="https://img.shields.io/github/forks/exusiaiwei/journey-learning-log" alt="forks">
-    <img src="https://img.shields.io/github/license/exusiaiwei/journey-learning-log" alt="license">
-    <img src="https://img.shields.io/github/last-commit/exusiaiwei/journey-learning-log" alt="last-commit">
-  </p>
-</div>
 
-# 🚀 Journey Learning Log
+# 🚀 Weekly Coding Adventures 🚀
 
-A repository to document my overall learning progress, reflections, and plans.
+## 📅 2024-08-11 to 2024-08-18
 
-## 📚 Table of Contents
+Welcome to this week's coding journey! Let's dive into the exciting world of bytes and algorithms.
 
-- [🚀 Journey Learning Log](#-journey-learning-log)
-  - [📚 Table of Contents](#-table-of-contents)
-  - [🌟 Background](#-background)
-  - [📁 Repository Structure](#-repository-structure)
-  - [🎯 Goals and Plans](#-goals-and-plans)
-  - [🔗 Related Repositories](#-related-repositories)
-    - [Research Projects](#research-projects)
-    - [Learning Areas](#learning-areas)
-    - [Independent Projects](#independent-projects)
-  - [🧑‍💻 Maintainer](#-maintainer)
-  - [📄 License](#-license)
+---
 
-## 🌟 Background
 
-The "Journey Learning Log" repository serves as a comprehensive record of my learning journey, reflections, and future plans. It's designed to help me track my progress, set goals, and maintain a clear overview of my personal and professional development.
+## 🗓️ Sunday, August 11
 
-## 📁 Repository Structure
+⏰ **Coding Time**: 
 
-```
-journey-learning-log/
-├── README.md
-└── goals_and_plans/
-```
-
-- `goals_and_plans/`: Stores long-term goals and detailed learning plans.
-
-## 🎯 Goals and Plans
-
-I use Markdown task lists to plan and track my learning progress. These lists help me break down my goals into manageable tasks and monitor my progress over time.
+### 🔤 Languages
 
 
 
-## 🔗 Related Repositories
+---
 
-### Research Projects
+## 🗓️ Monday, August 12
 
-- [supp-eyetracking-ll-2022](https://github.com/exusiaiwei/supp-eyetracking-ll-2022): This project is an accumulation of programs and data from my study and research involving eye-tracking technology. The equipment is from the Language Learning and Cognitive Science Laboratory at Wuhan University.
+⏰ **Coding Time**: 
 
-- [supp-social-media-style-2023](https://github.com/exusiaiwei/supp-social-media-style-2023): This repository contains supplementary materials for the research project "Research on Social Media Style Classification Based on Quantitative Indicators". It includes corpora, code for corpus processing, and data analysis tools.
+### 🔤 Languages
 
-### Learning Areas
 
-- [area-python-learning](https://github.com/exusiaiwei/area-python-learning): This repository is dedicated to my Python learning journey, containing notes, exercises, and projects related to Python programming.
 
-### Independent Projects
+---
 
-- [uni-saarland-survival-guide](https://github.com/exusiaiwei/uni-saarland-survival-guide): A comprehensive survival guide for students at Saarland University, created by students, for students. 📚
+## 🗓️ Tuesday, August 13
 
-## 🧑‍💻 Maintainer
+⏰ **Coding Time**: 
 
-[@exusiaiwei](https://github.com/exusiaiwei)
+### 🔤 Languages
 
-## 📄 License
 
-[MIT](LICENSE) © exusiaiwei
 
-<div align="center">
-  <p>
-    <a href="#-journey-learning-log">Back to Top</a>
-  </p>
-</div>
+---
+
+## 🗓️ Wednesday, August 14
+
+⏰ **Coding Time**: 
+
+### 🔤 Languages
+
+
+
+---
+
+## 🗓️ Thursday, August 15
+
+⏰ **Coding Time**: 
+
+### 🔤 Languages
+
+
+
+---
+
+## 🗓️ Friday, August 16
+
+⏰ **Coding Time**: 
+
+### 🔤 Languages
+
+
+
+---
+
+## 🗓️ Saturday, August 17
+
+⏰ **Coding Time**: 
+
+### 🔤 Languages
+
+
+
+---
+
+## 🗓️ Sunday, August 18
+
+⏰ **Coding Time**: 
+
+### 🔤 Languages
+
+
+
+---
+
+## 📊 Weekly Overview
+
+⏰ **Total Coding Time**: 
+
+### 🏆 Top Languages This Week
+
+
+
+---
+
+Keep coding, keep learning, and may your bugs be few and your commits be many! 💻✨
