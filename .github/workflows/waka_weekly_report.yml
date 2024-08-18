@@ -23,15 +23,14 @@ jobs:
         run: |
           pip install requests
 
-      - name: Fetch Waka stats
-        env:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+      - name: Create Python script
         run: |
-          python - <<EOF
+          cat << EOF > generate_report.py
           import requests
           import json
           from datetime import datetime, timedelta
           import calendar
+          import os
 
           def generate_ascii_chart(percentages):
               chart = "```\n"
@@ -48,7 +47,7 @@ jobs:
           # 构建API请求
           url = "https://wakatime.com/api/v1/users/current/summaries"
           params = {
-              "api_key": "${{ secrets.WAKATIME_API_KEY }}",
+              "api_key": os.environ['WAKATIME_API_KEY'],
               "start": start_date.isoformat(),
               "end": end_date.isoformat(),
           }
@@ -120,9 +119,15 @@ jobs:
 
           # 保存报告
           week_number = end_date.strftime('%Y-W%V')
+          os.makedirs('weekly_reports', exist_ok=True)
           with open(f"weekly_reports/report_{week_number}.md", "w") as f:
               f.write(report)
           EOF
+
+      - name: Run Python script
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: python generate_report.py
 
       - name: Commit and push changes
         run: |
