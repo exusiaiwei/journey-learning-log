@@ -28,101 +28,101 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python - <<EOF
-            import requests
-            import json
-            from datetime import datetime, timedelta
-            import calendar
+          import requests
+          import json
+          from datetime import datetime, timedelta
+          import calendar
 
-            def generate_ascii_chart(percentages):
-                chart = "```\n"
-                for lang, percentage in percentages:
-                    bar_length = int(percentage * 30 / 100)
-                    chart += f"{lang.ljust(10)} {'█' * bar_length}{' ' * (30 - bar_length)} {percentage:.1f}%\n"
-                chart += "```"
-                return chart
+          def generate_ascii_chart(percentages):
+              chart = "```\n"
+              for lang, percentage in percentages:
+                  bar_length = int(percentage * 30 / 100)
+                  chart += f"{lang.ljust(10)} {'█' * bar_length}{' ' * (30 - bar_length)} {percentage:.1f}%\n"
+              chart += "```"
+              return chart
 
-            # 获取上周的日期范围
-            end_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-            start_date = end_date - timedelta(days=7)
+          # 获取上周的日期范围
+          end_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+          start_date = end_date - timedelta(days=7)
 
-            # 构建API请求
-            url = "https://wakatime.com/api/v1/users/current/summaries"
-            params = {
-                "api_key": "${{ secrets.WAKATIME_API_KEY }}",
-                "start": start_date.isoformat(),
-                "end": end_date.isoformat(),
-            }
+          # 构建API请求
+          url = "https://wakatime.com/api/v1/users/current/summaries"
+          params = {
+              "api_key": "${{ secrets.WAKATIME_API_KEY }}",
+              "start": start_date.isoformat(),
+              "end": end_date.isoformat(),
+          }
 
-            # 发送请求
-            response = requests.get(url, params=params)
-            data = response.json()
+          # 发送请求
+          response = requests.get(url, params=params)
+          data = response.json()
 
-            # 生成报告
-            report = f"""
-            # 🚀 Weekly Coding Adventures 🚀
+          # 生成报告
+          report = f"""
+          # 🚀 Weekly Coding Adventures 🚀
 
-            ## 📅 {start_date.date()} to {end_date.date()}
+          ## 📅 {start_date.date()} to {end_date.date()}
 
-            Welcome to this week's coding journey! Let's dive into the exciting world of bytes and algorithms.
+          Welcome to this week's coding journey! Let's dive into the exciting world of bytes and algorithms.
 
-            ---
+          ---
 
-            """
+          """
 
-            total_week_time = sum(day['grand_total']['total_seconds'] for day in data['data'])
-            languages_week = {}
+          total_week_time = sum(day['grand_total']['total_seconds'] for day in data['data'])
+          languages_week = {}
 
-            for day in data['data']:
-                date = datetime.fromisoformat(day['range']['date'])
-                total_time = day['grand_total']['text']
+          for day in data['data']:
+              date = datetime.fromisoformat(day['range']['date'])
+              total_time = day['grand_total']['text']
 
-                report += f"""
-            ## 🗓️ {calendar.day_name[date.weekday()]}, {date.strftime('%B %d')}
+              report += f"""
+          ## 🗓️ {calendar.day_name[date.weekday()]}, {date.strftime('%B %d')}
 
-            ⏰ **Coding Time**: `{total_time}`
+          ⏰ **Coding Time**: `{total_time}`
 
-            ### 🔤 Languages
+          ### 🔤 Languages
 
-            """
+          """
 
-                languages = day['languages']
-                languages.sort(key=lambda x: x['total_seconds'], reverse=True)
-                percentages = [(lang['name'], lang['percent']) for lang in languages[:5]]
+              languages = day['languages']
+              languages.sort(key=lambda x: x['total_seconds'], reverse=True)
+              percentages = [(lang['name'], lang['percent']) for lang in languages[:5]]
 
-                report += generate_ascii_chart(percentages)
-                report += "\n\n---\n"
+              report += generate_ascii_chart(percentages)
+              report += "\n\n---\n"
 
-                for lang in languages:
-                    if lang['name'] in languages_week:
-                        languages_week[lang['name']] += lang['total_seconds']
-                    else:
-                        languages_week[lang['name']] = lang['total_seconds']
+              for lang in languages:
+                  if lang['name'] in languages_week:
+                      languages_week[lang['name']] += lang['total_seconds']
+                  else:
+                      languages_week[lang['name']] = lang['total_seconds']
 
-            report += f"""
-            ## 📊 Weekly Overview
+          report += f"""
+          ## 📊 Weekly Overview
 
-            ⏰ **Total Coding Time**: `{timedelta(seconds=int(total_week_time))}`
+          ⏰ **Total Coding Time**: `{timedelta(seconds=int(total_week_time))}`
 
-            ### 🏆 Top Languages This Week
+          ### 🏆 Top Languages This Week
 
-            """
+          """
 
-            languages_week = sorted(languages_week.items(), key=lambda x: x[1], reverse=True)
-            percentages = [(lang, (time / total_week_time) * 100) for lang, time in languages_week[:5]]
-            report += generate_ascii_chart(percentages)
+          languages_week = sorted(languages_week.items(), key=lambda x: x[1], reverse=True)
+          percentages = [(lang, (time / total_week_time) * 100) for lang, time in languages_week[:5]]
+          report += generate_ascii_chart(percentages)
 
-            report += """
+          report += """
 
-            ---
+          ---
 
-            Keep coding, keep learning, and may your bugs be few and your commits be many! 💻✨
-            """
+          Keep coding, keep learning, and may your bugs be few and your commits be many! 💻✨
+          """
 
-            # 保存报告
-            week_number = end_date.strftime('%Y-W%V')
-            with open(f"weekly_reports/report_{week_number}.md", "w") as f:
-                f.write(report)
-              EOF
+          #  保存报告
+          week_number = end_date.strftime('%Y-W%V')
+          with open(f"weekly_reports/report_{week_number}.md", "w") as f:
+              f.write(report)
+          EOF
 
       - name: Commit and push changes
         run: |
