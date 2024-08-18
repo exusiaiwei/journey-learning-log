@@ -2,20 +2,17 @@ name: Waka Weekly Report
 
 on:
   schedule:
+    # 每周日晚上 12 点运行（UTC 时间）
     - cron: '0 0 * * 0'
-  workflow_dispatch:
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   update-weekly-report:
     name: Update Weekly Report
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout target repository
+      - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          repository: exusiaiwei/journey-learning-log
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          path: target-repo
 
       - name: Get Waka stats
         uses: anmol098/waka-readme-stats@master
@@ -35,13 +32,12 @@ jobs:
 
       - name: Move and rename report
         run: |
-          mkdir -p target-repo/weekly_reports
+          mkdir -p weekly_reports
           week_number=$(date +'%Y-W%V')
-          mv README.md "target-repo/weekly_reports/report_${week_number}.md"
+          mv README.md "weekly_reports/report_${week_number}.md"
 
       - name: Commit and push changes
         run: |
-          cd target-repo
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add weekly_reports
